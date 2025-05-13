@@ -1,59 +1,44 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gallery</title>
-  </head>
-  <body class="bg-white">
 
-  <main class="boxncontainer mx-auto p-4 bg-black">
-    <div class="boxgrid grid-cols-5 gap-2">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bento Gallery | Tailwind Grid</title>
+  <link rel="stylesheet" href="/src/style.css">
+</head>
 
-      <div class="box bg-red-500 rounded-bt">Rojo
-        <img src=img/auro.png alt="Random Img"/>
-      
-      </div>
-      <div class="box box portrait bg-red-600">Rojo fuerte
-        <img src="img/cabeza.png" alt="Random Img"/>
-      </div>
+<body class="bg-black">
 
-      <div class="box bg-red-700">Rojo rojo
-        <img src="img/columpios.png" alt="Random Img"/>
+  <main class="container mx-auto px-4">
+    <form id="searchForm" class="mb-2">
+      <div class="flex gap-4 max-w-2xl mx-auto">
+        <div class="flex-1">
+          <input 
+            type="text" 
+            id="searchInput" 
+            class="w-full px-4 py-2 rounded-lg border border-transparent bg-transparent text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-800"
+            placeholder="Buscar imágenes..."
+            required
+            minlength="3"
+            maxlength="50"
+          />
+          <div id="searchError" class="text-white text-sm mt-1 hidden"></div>
+        </div>
+        <button 
+          type="submit"
+          class="px-6 py-2 bg-pink-800 text-white rounded-lg hover:bg-pink-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          Buscar
+        </button>
       </div>
+    </form>
 
-      <div class="box box-landscape bg-red-800">ROJO Rojo
-        <img src="img/flor.png" alt="Random Img"/>
-      </div>
-
-      <div class="box bg-red-900">Rojo
-        <img src="img/insecto.png" alt="Random Img"/>
-      </div>
-
-      <div class="box box-double bg-red-950">Rojo ROJO
-        <img src="img/luz.png" alt="Random Img"/>
-      </div>
-
-      <div class="box bg-red-500 rounded-bt">Rojo
-        <img src="img/poster.png" alt="Random Img"/>
-      </div>
-
-      <div class="box bg-red-600">Rojo fuerte
-        <img src="img/producto.png" alt="Random Img"/>
-      </div>
-
-      <div class="box box-double bg-red-700">Rojo Rojo
-        <img src="img/stickers.png" alt="Random Img"/>
-      </div>
-      <div class="box bg-red-800">ROJO Rojo
-        <img src="img/vela.png" alt="Random Img"/>
-      </div>
-      <div class="box box-landscape bg-red-950">Rojo ROJO</div>
-      <img src="img/yo.png" alt="Random Img"/>
-      </div>
-
+    <div id="grid-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 grid-rows-2 sm:grid-rows-3 md:grid-rows-4 lg:grid-rows-5 xl:grid-rows-6 grid-flow-dense auto-rows-fr auto-cols-fr">
+      <!-- Las imágenes se cargarán dinámicamente con JavaScript -->
+    </div>
   </main>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>
