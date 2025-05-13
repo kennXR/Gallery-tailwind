@@ -1,1 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Coral+Pixels&display=swap');
 @import "tailwindcss";
+
+@layer theme{
+  :root{
+    --default-font-family: 'Coral Pixels', sans-serif;
+  }
+}
+
+@layer base{
+    h1,h2,h3,h4,h5,h6{
+      font-family: var(--default-font-family);
+    }
+}
+
+@layer components {
+  .box {
+      @apply relative rounded flex items-center justify-center overflow-hidden border border-dashed border-gray-300 col-span-1 row-span-1 aspect-square p-2;
+  }
+    
+  .box-double {
+      @apply col-span-2 row-span-2;
+      aspect-ratio: 2 / 2; /* cuadrado grande */
+  }
+    
+  .box-portrait {
+      @apply col-span-1 row-span-2;
+      aspect-ratio: 1 / 2; /* vertical */
+  }
+    
+  .box-landscape {
+      @apply col-span-2 row-span-1;
+      aspect-ratio: 2 / 1; /* horizontal */
+  }
+    
+  .box img {
+      @apply w-full h-full object-cover;
+  }      
+    
+}
+
+@layer utilities {
+  
+}
